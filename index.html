@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sam Golden — Data Scientist, Climate &amp; Energy</title>
+    <meta name="description" content="Sam Golden models what climate change does to the systems we depend on — Oregon's power grid, glaciers, public institutions. Honors thesis, live dashboard, and the coal plant that left Oregon's books but never stopped burning." />
+    <meta property="og:title" content="Sam Golden — Data Scientist, Climate & Energy" />
+    <meta property="og:description" content="I model what climate change does to the systems we depend on." />
+    <meta property="og:image" content="/photos/about-bg.webp" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23f2eee6'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='28' fill='%231e211c' text-anchor='middle'%3ES%3Ctspan fill='%23b8402c'%3EG%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // apply saved theme before paint so there's no light-mode flash (main page only)
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("sg-theme") === "dark" ? "dark" : "light";
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+  /* Field-notes paper, anchored on DSC00529 (ridgelines) + DSC01385 (SF dusk) */
+  --paper: 40 28% 93%;
+  --paper-deep: 38 20% 88%;
+  --ink: 100 8% 12%;
+  --ink-soft: 100 5% 27%;
+  --muted: 80 5% 44%;
+  --accent: 152 30% 28%;    /* fir green — UI accent, links, figure labels */
+  --accent-deep: 152 34% 19%;
+  --accent-soft: 150 20% 86%;
+  --cool: 205 32% 36%;      /* dusk slate-blue — cooling arm */
+  --cool-soft: 205 24% 84%;
+  --gold: 42 62% 40%;       /* antique gold — the name, highlights, heating arm */
+  --gold-soft: 44 50% 86%;
+  --card: 0 0% 100%;        /* raised card surface (skill chips, project cards) */
+}
+
+/* Dark mode — main page only, driven by the Nav toggle (never system preference,
+   so the photography gallery, which never sets data-theme, stays light). */
+:root[data-theme="dark"] {
+  --paper: 150 8% 9%;
+  --paper-deep: 150 7% 14%;
+  --ink: 44 26% 90%;
+  --ink-soft: 44 9% 68%;
+  --muted: 80 6% 54%;
+  --accent: 150 38% 58%;
+  --accent-deep: 150 34% 48%;
+  --accent-soft: 150 18% 22%;
+  --cool: 205 42% 64%;
+  --cool-soft: 205 22% 24%;
+  --gold: 42 70% 62%;
+  --gold-soft: 44 26% 24%;
+  --card: 150 7% 16%;
+}
+
+body {
+  background: hsl(var(--paper));
+  color: hsl(var(--ink));
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+@layer components {
+  .serif { font-family: "Newsreader", Georgia, serif; }
+  .display {
+    font-family: "Newsreader", Georgia, serif;
+    letter-spacing: -0.01em;
+    line-height: 0.98;
+  }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .smallcaps {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .figlabel {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+  }
+  .rule { height: 1px; background: hsl(var(--ink) / 0.16); }
+  .rule-strong { height: 1px; background: hsl(var(--ink) / 0.65); }
+  /* red-pencil underline for key phrases in the investigation */
+  .pencil {
+    background-image: linear-gradient(hsl(var(--accent) / 0.55), hsl(var(--accent) / 0.55));
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: 0 92%;
+  }
+  /* figure treatment: hairline frame + paper mat for chart covers */
+  .figframe {
+    border: 1px solid hsl(var(--ink) / 0.16);
+    background: hsl(var(--paper-deep));
+    overflow: hidden;
+  }
+}
+
+/* axis ticks — the section-marker motif */
+.ticks {
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    hsl(var(--ink) / 0.35) 0 1px,
+    transparent 1px 28px
+  );
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid hsl(var(--ink) / 0.45);
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.9s ease-out,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes revealFailsafe { to { opacity: 1; transform: none; } }
+html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards; }
+
+/* hover lift */
+.lift { transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; }
+.lift:hover { translate: 0 -3px; }
+.lift-card { transition: translate 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+.lift-card:hover { translate: 0 -5px; box-shadow: 0 22px 44px -20px hsl(var(--ink) / 0.28); }
+
+/* hero scroll cue — dripping line */
+.cue-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, hsl(var(--gold) / 0.8), transparent);
+  animation: drip 2s ease-in-out infinite;
+}
+.cue-line-lg { width: 2px; height: 76px; }
+
+/* skills network — smooth dim/highlight on nodes & edges */
+.net-el { transition: opacity 0.3s ease, stroke 0.25s ease, fill 0.25s ease; }
+@keyframes drip {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* U-curve draw-in */
+.ucurve path.draw { stroke-dasharray: 700; stroke-dashoffset: 700; }
+.ucurve.in path.draw { animation: curveDraw 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.ucurve.in path.draw.late { animation-delay: 0.5s; }
+@keyframes curveDraw { to { stroke-dashoffset: 0; } }
+
+:focus-visible { outline: 2px solid hsl(var(--accent)); outline-offset: 3px; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lift:hover, .lift-card:hover { translate: none; box-shadow: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .ucurve path.draw { stroke-dasharray: none; stroke-dashoffset: 0; animation: none; }
+  .cue-line { animation: none; }
+  html { scroll-behavior: auto; }
+}
