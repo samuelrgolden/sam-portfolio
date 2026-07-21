@@ -32,3 +32,6 @@ dist-ssr
 # local scratch / drafts
 public/draft-*.html
 public/draft-*.png
+
+# local editor/agent config
+.claude/

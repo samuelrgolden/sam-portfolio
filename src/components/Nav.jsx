@@ -57,7 +57,7 @@ export default function Nav() {
         </a>
         <div className="hidden items-center gap-6 md:flex">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="smallcaps lift text-[hsl(var(--ink-soft))] hover:text-[hsl(var(--accent))]">
+            <a key={l.href} href={l.href} className="smallcaps link-wipe text-[hsl(var(--ink-soft))] hover:text-[hsl(var(--accent))]">
               {l.label}
             </a>
           ))}
@@ -66,9 +66,9 @@ export default function Nav() {
             href="/SamGolden-Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="smallcaps lift bg-[hsl(var(--accent))] px-3.5 py-2 text-[hsl(var(--paper))] hover:bg-[hsl(var(--accent-deep))]"
+            className="smallcaps dl btn-flow [--flow:hsl(var(--accent))] border border-[hsl(var(--accent))] px-3.5 py-2 text-[hsl(var(--accent))] transition-colors duration-300 hover:text-[hsl(var(--paper))]"
           >
-            Résumé ↓
+            Résumé <span className="dl-arrow" aria-hidden="true" />
           </a>
         </div>
         <div className="flex items-center gap-4 md:hidden">

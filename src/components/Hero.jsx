@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3.5">
             <a
               href="#projects"
-              className="smallcaps lift bg-[hsl(var(--accent))] px-7 py-3.5 text-[hsl(var(--paper))] shadow-lg hover:bg-[hsl(var(--accent-deep))]"
+              className="smallcaps lift btn-flow [--flow:hsl(var(--accent))] border border-[hsl(var(--accent))] bg-[hsl(var(--ink)/0.45)] px-7 py-3.5 text-[hsl(var(--paper))] shadow-lg backdrop-blur-sm"
             >
               View work
             </a>
@@ -65,13 +65,13 @@ export default function Hero() {
               href="https://sam-6464-oregon-energy-dashboard.hf.space"
               target="_blank"
               rel="noreferrer"
-              className="smallcaps lift bg-[hsl(var(--ink))] px-7 py-3.5 text-[hsl(var(--paper))] shadow-lg hover:bg-black"
+              className="smallcaps lift btn-flow [--flow:hsl(var(--gold))] border border-[hsl(var(--gold))] bg-[hsl(var(--ink)/0.45)] px-7 py-3.5 text-[hsl(var(--paper))] shadow-lg backdrop-blur-sm transition-colors duration-300 hover:text-[hsl(100_8%_12%)]"
             >
               Live dashboard ↗
             </a>
             <a
               href="#contact"
-              className="smallcaps lift border border-[hsl(var(--ink)/0.55)] bg-[hsl(var(--paper)/0.55)] px-7 py-3.5 text-[hsl(var(--ink))] backdrop-blur-sm hover:border-[hsl(var(--ink))]"
+              className="smallcaps lift btn-flow [--flow:hsl(var(--paper))] border border-[hsl(var(--paper)/0.6)] bg-[hsl(var(--ink)/0.45)] px-7 py-3.5 text-[hsl(var(--paper))] backdrop-blur-sm transition-colors duration-300 hover:border-[hsl(var(--paper))] hover:text-[hsl(var(--ink))]"
             >
               Get in touch
             </a>

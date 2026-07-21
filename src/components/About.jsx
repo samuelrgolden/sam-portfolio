@@ -39,8 +39,10 @@ export default function About() {
           </div>
 
           {/* portrait — no fade: it stays opaque so it always masks the thread behind it */}
-          <figure className="col-span-12 md:col-span-4 md:self-start">
-            <div data-thread="photo" className="aspect-[4/5] max-h-[540px] w-full overflow-hidden bg-[hsl(var(--paper-deep))]">
+          <figure className="col-span-12 md:col-span-4">
+            {/* on desktop the frame stretches to the grid row so its base lines up
+                with the facts list and the bio; mobile keeps the 4:5 plate */}
+            <div data-thread="photo" className="aspect-[4/5] max-h-[540px] w-full overflow-hidden bg-[hsl(var(--paper-deep))] md:aspect-auto md:h-full md:max-h-none">
               <img
                 src="/photos/about-portrait.webp"
                 alt="Sam Golden smiling on a forest path at the University of Oregon in graduation regalia"

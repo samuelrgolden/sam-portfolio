@@ -85,7 +85,7 @@ const ENTRIES = [
 const STATS = [
   ["Currently", "OQG · Handshake AI · MS + Teaching"],
   ["Focus", "Climate & Energy · ML&Stats"],
-  ["Deployed", "6 Projects · 24 Skills · 2 Languages"],
+  ["Deployed", "6 Projects · 24 Skills · 4 Languages"],
 ];
 
 function Entry({ entry, showYear }) {

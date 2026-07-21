@@ -7,6 +7,7 @@ import Projects from "./components/Projects.jsx";
 import Experience from "./components/Experience.jsx";
 import Recognition from "./components/Recognition.jsx";
 import Ending from "./components/Ending.jsx";
+import ToTop from "./components/ToTop.jsx";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         </div>
       </main>
       <Ending />
+      <ToTop />
     </div>
   );
 }

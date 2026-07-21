@@ -75,7 +75,7 @@ export default function Ending() {
               >
                 <span>
                   <span className="smallcaps block text-[0.62rem] text-[hsl(var(--muted))]">I also shoot! →</span>
-                  <span className="serif mt-0.5 block text-xl text-[hsl(var(--gold))]">View my photography</span>
+                  <span className="link-wipe serif mt-0.5 inline-block text-xl text-[hsl(var(--gold))]">View my photography</span>
                 </span>
                 <span aria-hidden="true" className="text-[hsl(var(--muted))] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[hsl(var(--gold))]">
                   →
@@ -111,7 +111,7 @@ export default function Ending() {
                       <c.Icon className="h-[17px] w-[17px] text-[hsl(var(--accent))]" />
                       <span>
                         <span className="smallcaps block text-[0.65rem] text-[hsl(var(--muted))]">{c.label}</span>
-                        <span className="serif mt-0.5 block text-lg transition-colors duration-300 group-hover:text-[hsl(var(--accent))] md:text-xl">
+                        <span className="link-wipe serif mt-0.5 inline-block text-lg transition-colors duration-300 group-hover:text-[hsl(var(--accent))] md:text-xl">
                           {c.value}
                         </span>
                       </span>

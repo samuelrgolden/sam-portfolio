@@ -185,11 +185,11 @@ export default function Projects() {
               return (
                 <article key={p.title} className="mb-8 break-inside-avoid">
                   {p.href ? (
-                    <a href={p.href} target="_blank" rel="noreferrer" className={`lift-card block p-3.5 ${CARD}`}>
+                    <a href={p.href} target="_blank" rel="noreferrer" className={`crop lift-card block p-3.5 ${CARD}`}>
                       {card}
                     </a>
                   ) : (
-                    <div className={`lift-card p-3.5 ${CARD}`}>{card}</div>
+                    <div className={`crop lift-card p-3.5 ${CARD}`}>{card}</div>
                   )}
                 </article>
               );
