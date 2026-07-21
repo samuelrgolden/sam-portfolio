@@ -19,17 +19,22 @@ export default function About() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-12">
         <div className="grid grid-cols-12 gap-x-6 gap-y-12 md:gap-x-10">
           {/* section label + facts */}
-          <div className="col-span-12 md:col-span-3">
+          {/* On wide screens the column takes the photo's exact height (the photo is
+              4:5 of a 4-col slot, this is 3 cols wide — a near-constant 1.725 ratio,
+              since the photo never hits its 540px cap inside max-w-1440) and the rail
+              distributes into it, so its last rule lands on the photo's base. Below xl
+              the text wraps too hard for the heights to reconcile, so it flows naturally. */}
+          <div className="col-span-12 md:col-span-3 xl:flex xl:aspect-[1000/1725] xl:flex-col xl:self-start">
             <Reveal>
               <p className="figlabel">§ — introduction</p>
               <h2 className="display mt-3 text-[2.9rem] font-medium md:text-[3.6rem]">
                 About<span className="text-[hsl(var(--gold))]">.</span>
               </h2>
             </Reveal>
-            <Reveal delay={60}>
-              <dl className="mt-10 border-b border-[hsl(var(--ink)/0.18)]">
+            <Reveal delay={60} className="xl:flex xl:min-h-0 xl:flex-1 xl:flex-col">
+              <dl className="mt-6 border-b border-[hsl(var(--ink)/0.18)] xl:flex xl:min-h-0 xl:flex-1 xl:flex-col">
                 {FACTS.map(([label, value]) => (
-                  <div key={label} className="border-t border-[hsl(var(--ink)/0.18)] py-4">
+                  <div key={label} className="border-t border-[hsl(var(--ink)/0.18)] py-1.5 xl:flex-1">
                     <dt className="smallcaps text-[hsl(var(--muted))]">{label}</dt>
                     <dd className="serif mt-1 text-lg leading-snug">{value}</dd>
                   </div>
@@ -39,10 +44,8 @@ export default function About() {
           </div>
 
           {/* portrait — no fade: it stays opaque so it always masks the thread behind it */}
-          <figure className="col-span-12 md:col-span-4">
-            {/* on desktop the frame stretches to the grid row so its base lines up
-                with the facts list and the bio; mobile keeps the 4:5 plate */}
-            <div data-thread="photo" className="aspect-[4/5] max-h-[540px] w-full overflow-hidden bg-[hsl(var(--paper-deep))] md:aspect-auto md:h-full md:max-h-none">
+          <figure className="col-span-12 md:col-span-4 md:self-start">
+            <div data-thread="photo" className="aspect-[4/5] max-h-[540px] w-full overflow-hidden bg-[hsl(var(--paper-deep))]">
               <img
                 src="/photos/about-portrait.webp"
                 alt="Sam Golden smiling on a forest path at the University of Oregon in graduation regalia"
