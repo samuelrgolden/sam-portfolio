@@ -82,16 +82,17 @@ body {
   }
 }
 
-/* axis ticks — the section-marker motif */
+/* axis ticks — the section-marker motif. Ticks stay 1px hairlines; only their
+   pitch and the band height scale. */
 .ticks {
-  height: 10px;
+  height: 0.625rem;
   background-image: repeating-linear-gradient(
     90deg,
     hsl(var(--ink) / 0.35) 0 1px,
-    transparent 1px 28px
+    transparent 1px 1.75rem
   );
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: no-repeat;
   border-bottom: 1px solid hsl(var(--ink) / 0.45);
 }
@@ -99,7 +100,7 @@ body {
 /* scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(36px);
+  transform: translateY(2.25rem);
   transition:
     opacity 0.9s ease-out,
     transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
@@ -114,9 +115,9 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
 
 /* hover lift */
 .lift { transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; }
-.lift:hover { translate: 0 -3px; }
+.lift:hover { translate: 0 -0.1875rem; }
 .lift-card { transition: translate 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
-.lift-card:hover { translate: 0 -5px; box-shadow: 0 22px 44px -20px hsl(var(--ink) / 0.28); }
+.lift-card:hover { translate: 0 -0.3125rem; box-shadow: 0 1.375rem 2.75rem -1.25rem hsl(var(--ink) / 0.28); }
 
 /* link rule — a hairline wipes in from the left, and out to the right on leave.
    1px + currentColor so it reads as the same stock as .rule and inherits hover color. */
@@ -125,7 +126,7 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
   content: "";
   position: absolute;
   inset-inline: 0;
-  bottom: -4px;
+  bottom: -0.25rem;
   height: 1px;
   background: currentColor;
   transform: scaleX(0);
@@ -184,7 +185,7 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
 .crop::after {
   content: "";
   position: absolute;
-  inset: -12px;
+  inset: -0.75rem;
   pointer-events: none;
   opacity: 0;
   transform: scale(0.985);
@@ -195,9 +196,10 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
     linear-gradient(var(--mark) 0 0), linear-gradient(var(--mark) 0 0),
     linear-gradient(var(--mark) 0 0), linear-gradient(var(--mark) 0 0);
   background-repeat: no-repeat;
+  /* mark length scales; the stroke stays a 1px hairline */
   background-size:
-    14px 1px, 1px 14px, 14px 1px, 1px 14px,
-    14px 1px, 1px 14px, 14px 1px, 1px 14px;
+    0.875rem 1px, 1px 0.875rem, 0.875rem 1px, 1px 0.875rem,
+    0.875rem 1px, 1px 0.875rem, 0.875rem 1px, 1px 0.875rem;
   background-position:
     left top, left top, right top, right top,
     left bottom, left bottom, right bottom, right bottom;
@@ -222,7 +224,7 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
   color: hsl(var(--gold));
   backdrop-filter: blur(6px);
   opacity: 0;
-  translate: 0 10px;
+  translate: 0 0.625rem;
   pointer-events: none;
   transition: opacity 0.4s ease, translate 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.3s ease, background-color 0.3s ease;
@@ -233,11 +235,11 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
 /* hero scroll cue — dripping line */
 .cue-line {
   width: 1px;
-  height: 48px;
+  height: 3rem;
   background: linear-gradient(to bottom, hsl(var(--gold) / 0.8), transparent);
   animation: drip 2s ease-in-out infinite;
 }
-.cue-line-lg { width: 2px; height: 76px; }
+.cue-line-lg { width: 2px; height: 4.75rem; }
 
 /* skills network — smooth dim/highlight on nodes & edges */
 .net-el { transition: opacity 0.3s ease, stroke 0.25s ease, fill 0.25s ease; }
@@ -255,7 +257,13 @@ html:not(.js-reveal) .reveal { animation: revealFailsafe 0.6s ease 1.2s forwards
 @keyframes curveDraw { to { stroke-dashoffset: 0; } }
 
 :focus-visible { outline: 2px solid hsl(var(--accent)); outline-offset: 3px; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* 16px root at 1536px viewport, 24px at 2560px; unchanged below 1536px.
+     Every length in this project is rem, so the whole design scales with it.
+     rem for the min so a raised browser font-size preference still applies. */
+  font-size: clamp(1rem, 0.25rem + 0.78125vw, 1.5rem);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .lift:hover, .lift-card:hover { translate: none; box-shadow: none; }

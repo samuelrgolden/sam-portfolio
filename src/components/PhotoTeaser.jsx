@@ -8,7 +8,7 @@ const SHOTS = [
 
 export default function PhotoTeaser() {
   return (
-    <section id="photography" className="mx-auto max-w-[1440px] scroll-mt-20 px-6 py-16 md:px-12 md:py-24">
+    <section id="photography" className="mx-auto max-w-[90rem] scroll-mt-20 px-6 py-16 md:px-12 md:py-24">
       <Reveal>
         <p className="figlabel">Plate 01 — photography</p>
         <div className="ticks mt-2 mb-8" aria-hidden="true" />

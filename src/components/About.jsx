@@ -16,7 +16,7 @@ const PARAGRAPHS = [
 export default function About() {
   return (
     <section id="about" className="scroll-mt-20 pt-14 pb-8 md:pt-20 md:pb-10">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-12">
+      <div className="mx-auto max-w-[90rem] px-6 md:px-12">
         <div className="grid grid-cols-12 gap-x-6 gap-y-12 md:gap-x-10">
           {/* section label + facts */}
           {/* On wide screens the column takes the photo's exact height (the photo is
@@ -45,7 +45,7 @@ export default function About() {
 
           {/* portrait — no fade: it stays opaque so it always masks the thread behind it */}
           <figure className="col-span-12 md:col-span-4 md:self-start">
-            <div data-thread="photo" className="aspect-[4/5] max-h-[540px] w-full overflow-hidden bg-[hsl(var(--paper-deep))]">
+            <div data-thread="photo" className="aspect-[4/5] max-h-[33.75rem] w-full overflow-hidden bg-[hsl(var(--paper-deep))]">
               <img
                 src="/photos/about-portrait.webp"
                 alt="Sam Golden smiling on a forest path at the University of Oregon in graduation regalia"

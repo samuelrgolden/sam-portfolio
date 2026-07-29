@@ -92,12 +92,12 @@ function Entry({ entry, showYear }) {
   return (
     <Reveal
       as="li"
-      className="group relative border-t border-[hsl(var(--ink)/0.16)] py-8 first:border-t-0 first:pt-0 md:grid md:grid-cols-[110px_1fr] md:gap-10 md:py-10 md:first:pt-0"
+      className="group relative border-t border-[hsl(var(--ink)/0.16)] py-8 first:border-t-0 first:pt-0 md:grid md:grid-cols-[6.875rem_1fr] md:gap-10 md:py-10 md:first:pt-0"
     >
       {/* dot on the vertical line */}
       <span
         aria-hidden="true"
-        className="absolute left-[106px] top-[2.9rem] hidden h-[9px] w-[9px] rounded-full bg-[hsl(var(--gold))] outline outline-4 outline-[hsl(var(--paper))] group-first:top-[0.4rem] md:block"
+        className="absolute left-[6.625rem] top-[2.9rem] hidden h-[0.5625rem] w-[0.5625rem] rounded-full bg-[hsl(var(--gold))] outline outline-4 outline-[hsl(var(--paper))] group-first:top-[0.4rem] md:block"
       />
       {/* year marker */}
       <div className="md:pr-10 md:text-right">
@@ -107,7 +107,7 @@ function Entry({ entry, showYear }) {
         <p className="smallcaps flex flex-wrap items-center gap-3 text-[hsl(var(--muted))]">
           {entry.range}
           {entry.now && (
-            <span className="smallcaps rounded-[2px] bg-[hsl(var(--accent-deep))] px-2 py-[3px] text-[0.55rem] text-[hsl(var(--paper))]">
+            <span className="smallcaps rounded-[0.125rem] bg-[hsl(var(--accent-deep))] px-2 py-[0.1875rem] text-[0.55rem] text-[hsl(var(--paper))]">
               Now
             </span>
           )}
@@ -135,7 +135,7 @@ function Entry({ entry, showYear }) {
 export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-20 py-14 md:py-16">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-12">
+      <div className="mx-auto max-w-[90rem] px-6 md:px-12">
         <Reveal>
           <p className="figlabel">Fig. 03 — experience</p>
           <div className="mt-3 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -155,7 +155,7 @@ export default function Experience() {
           {/* the record */}
           <div className="col-span-12 md:col-span-8">
             <div className="relative border-b border-[hsl(var(--ink)/0.16)] md:pb-2">
-              <span aria-hidden="true" data-thread="exp-rail" className="absolute top-2 bottom-2 left-[110px] hidden w-px bg-[hsl(var(--ink)/0.16)] md:block" />
+              <span aria-hidden="true" data-thread="exp-rail" className="absolute top-2 bottom-2 left-[6.875rem] hidden w-px bg-[hsl(var(--ink)/0.16)] md:block" />
               <ol>
                 {ENTRIES.map((entry, i) => (
                   <Entry key={`${entry.role}-${entry.org}`} entry={entry} showYear={i === 0 || ENTRIES[i - 1].year !== entry.year} />

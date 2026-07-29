@@ -34,7 +34,7 @@ export default function ToTop() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="h-[18px] w-[18px]"
+        className="h-[1.125rem] w-[1.125rem]"
       >
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>

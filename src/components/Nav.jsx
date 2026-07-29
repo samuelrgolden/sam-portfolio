@@ -42,7 +42,7 @@ function ThemeToggle() {
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       className="lift text-[hsl(var(--ink-soft))] hover:text-[hsl(var(--gold))]"
     >
-      {dark ? <SunIcon className="h-[18px] w-[18px]" /> : <MoonIcon className="h-[17px] w-[17px]" />}
+      {dark ? <SunIcon className="h-[1.125rem] w-[1.125rem]" /> : <MoonIcon className="h-[1.0625rem] w-[1.0625rem]" />}
     </button>
   );
 }
@@ -51,7 +51,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[hsl(var(--ink)/0.14)] bg-[hsl(var(--paper)/0.92)] backdrop-blur">
-      <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-3 md:px-12">
+      <nav className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-3 md:px-12">
         <a href="#top" className="serif text-xl font-bold italic lift">
           S<span className="text-[hsl(var(--accent))]">G</span><span className="text-[hsl(var(--accent))]">.</span>
         </a>

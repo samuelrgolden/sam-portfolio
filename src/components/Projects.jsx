@@ -67,7 +67,7 @@ const PROJECTS = [
   },
 ];
 
-const CARD = "border border-[hsl(var(--ink)/0.14)] bg-[hsl(var(--card))] shadow-[0_14px_34px_-18px_hsl(var(--ink)/0.35)]";
+const CARD = "border border-[hsl(var(--ink)/0.14)] bg-[hsl(var(--card))] shadow-[0_0.875rem_2.125rem_-1.125rem_hsl(var(--ink)/0.35)]";
 
 function FeaturedBar() {
   return (
@@ -75,7 +75,7 @@ function FeaturedBar() {
       href={FEATURED.href}
       target="_blank"
       rel="noreferrer"
-      className={`lift-card mb-10 block border-2 border-[hsl(var(--gold)/0.7)] bg-[hsl(var(--card))] p-5 shadow-[0_18px_44px_-18px_hsl(var(--ink)/0.4)] md:p-6`}
+      className={`lift-card mb-10 block border-2 border-[hsl(var(--gold)/0.7)] bg-[hsl(var(--card))] p-5 shadow-[0_1.125rem_2.75rem_-1.125rem_hsl(var(--ink)/0.4)] md:p-6`}
     >
       <div className="grid grid-cols-12 items-center gap-6 md:gap-8">
         <div className="col-span-12 md:col-span-4">
@@ -119,7 +119,7 @@ export default function Projects() {
   const [filter, setFilter] = useState("All");
   const shown = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.tags.includes(filter));
   return (
-    <section id="projects" className="mx-auto max-w-[1440px] scroll-mt-20 px-6 py-14 md:px-12 md:py-16">
+    <section id="projects" className="mx-auto max-w-[90rem] scroll-mt-20 px-6 py-14 md:px-12 md:py-16">
       <Reveal>
         <div className="text-center">
           <h2 className="display text-[2.9rem] font-medium md:text-[4.2rem]">

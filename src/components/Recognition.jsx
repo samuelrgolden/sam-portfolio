@@ -2,7 +2,7 @@ import Reveal from "./Reveal.jsx";
 
 export default function Recognition() {
   return (
-    <section id="recognition" className="mx-auto max-w-[1440px] scroll-mt-20 px-6 py-14 md:px-12 md:py-16">
+    <section id="recognition" className="mx-auto max-w-[90rem] scroll-mt-20 px-6 py-14 md:px-12 md:py-16">
       <Reveal>
         <p className="figlabel">Fig. 04 — recognition</p>
         <div className="ticks mt-2 mb-8" aria-hidden="true" />
@@ -12,7 +12,7 @@ export default function Recognition() {
       </Reveal>
 
       <Reveal delay={120}>
-        <div className="mt-8 grid grid-cols-12 items-center gap-6 border-2 border-[hsl(var(--gold)/0.7)] bg-[hsl(var(--card))] p-5 shadow-[0_18px_44px_-18px_hsl(var(--ink)/0.4)] md:gap-10 md:p-6">
+        <div className="mt-8 grid grid-cols-12 items-center gap-6 border-2 border-[hsl(var(--gold)/0.7)] bg-[hsl(var(--card))] p-5 shadow-[0_1.125rem_2.75rem_-1.125rem_hsl(var(--ink)/0.4)] md:gap-10 md:p-6">
           {/* the moment — presenting to the judges */}
           <figure className="col-span-12 md:col-span-7">
             <div className="figframe">

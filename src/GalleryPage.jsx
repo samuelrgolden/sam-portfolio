@@ -110,7 +110,7 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-[hsl(var(--paper))] text-[hsl(var(--ink))]">
       {/* header */}
       <header className="sticky top-0 z-30 border-b border-[hsl(var(--ink)/0.14)] bg-[hsl(var(--paper)/0.92)] backdrop-blur">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-3 md:px-8">
+        <div className="mx-auto flex max-w-[100rem] items-center justify-between px-5 py-3 md:px-8">
           <a href="/" className="serif text-xl font-bold italic">
             S<span className="text-[hsl(var(--accent))]">G</span><span className="text-[hsl(var(--accent))]">.</span>
           </a>
@@ -121,7 +121,7 @@ export default function GalleryPage() {
       </header>
 
       {/* title + chips */}
-      <div className="mx-auto max-w-[1600px] px-5 pt-12 pb-6 md:px-8">
+      <div className="mx-auto max-w-[100rem] px-5 pt-12 pb-6 md:px-8">
         <p className="figlabel">Plate 01 — photography</p>
         <div className="mt-2 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
           <h1 className="display text-[2.9rem] font-medium md:text-[4.4rem]">
@@ -151,7 +151,7 @@ export default function GalleryPage() {
       </div>
 
       {/* the wall */}
-      <div ref={wrapRef} className="mx-auto max-w-[1600px] px-5 pb-24 md:px-8">
+      <div ref={wrapRef} className="mx-auto max-w-[100rem] px-5 pb-24 md:px-8">
         {rows.map((r, ri) => (
           <div key={ri} className="flex" style={{ gap: GAP, marginBottom: GAP }}>
             {r.items.map((p) => {
@@ -183,7 +183,7 @@ export default function GalleryPage() {
       </div>
 
       <footer className="border-t border-[hsl(var(--ink)/0.16)]">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-2 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-[100rem] flex-col gap-2 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
           <p className="mono text-[0.64rem] tracking-wide text-[hsl(var(--muted))]">© 2026 Sam Golden · every photograph taken by me</p>
           <a href="/#contact" className="mono text-[0.64rem] tracking-wide text-[hsl(var(--accent))] hover:underline">
             get in touch →

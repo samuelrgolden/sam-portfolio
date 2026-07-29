@@ -40,7 +40,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div ref={wrapRef} className="relative z-10 max-w-[900px] px-6" style={{ transform: "translateY(-5vh)" }}>
+      <div ref={wrapRef} className="relative z-10 max-w-[56.25rem] px-6" style={{ transform: "translateY(-5vh)" }}>
         <Reveal>
           <p className="smallcaps inline-flex items-center gap-3 text-[hsl(var(--ink))]">
             <span className="h-px w-7 bg-[hsl(var(--gold))]" aria-hidden="true" />
